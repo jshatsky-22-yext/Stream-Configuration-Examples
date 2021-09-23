@@ -1,0 +1,62 @@
+{
+    "source": "knowledgeGraph",
+    "filter": {
+      "entityTypes": ["healthcareProfessional"]
+    },
+    "fields": {
+      "id": {},
+      "name": {},
+      "description": {},
+      "slug": {
+        "transform": { "multiLanguage": ["en", "es", "de"] }
+      },
+      "c_optionField": {
+        "format": "DISPLAY_NAME"
+      },
+      "paymentOptions": {
+        "format": "OPTION_LIST",
+        "fields": ["value", "displayName", "selected"]
+      },
+      "c_specialties": {
+        "fields": ["name"]
+      },
+      "rel_doctorHospital": {
+        "role": "provider",
+        "fields": {
+          "location": {
+            "fields": ["name"]
+          }
+        }
+      },
+      "listings": {
+        "transform": { "keyBy": "publisher" },
+        "fields": ["url"]
+      },
+      "googleReviews": {
+        "source": "reviews",
+        "filter": {
+          "publisher": "googleMyBusiness",
+          "last": 20
+        },
+        "fields": [
+          "reviewId",
+          "authorName",
+          "content",
+          "reviewUrl"
+        ]
+      },
+      "facebookReviews": {
+        "source": "reviews",
+        "filter": {
+          "publisher": "facebook",
+          "last": 20
+        },
+        "fields": [
+          "reviewId",
+          "authorName",
+          "content",
+          "reviewUrl"
+        ]
+      }
+    }
+  }

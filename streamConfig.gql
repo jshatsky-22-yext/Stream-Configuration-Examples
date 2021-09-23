@@ -1,0 +1,37 @@
+knowledgeGraph(entityType: "healthcareProfessional") {
+    id
+    name
+    description
+    slug @multilanguage(locales: ["en", "es", "de"])
+    c_optionField(format: DISPLAY)
+    paymentOptions: optionList(field: "paymentOptions") {
+      value
+      displayName
+      selected
+    }
+    c_specialties {
+      name
+    }
+    rel_doctorHospital(role: "provider") {
+      hours
+      location {
+        name
+      }
+    }
+    listings @keyBy(field: "publisher") {
+        url
+    }
+    googleReviews: reviews(publisher: "googleMyBusiness", last: 20) {
+        ...reviewFields
+    }
+    facebookReviews: reviews(publisher: "facebook", last: 20) {
+        ...reviewFields
+    }
+}
+
+fragment reviewFields on Review {
+    reviewId
+    authorName
+    content
+    reviewUrl
+}
