@@ -1,0 +1,89 @@
+{
+    "source": "knowledgeGraph",
+    "filter": {
+      "savedFilderIds": ["704861046"]
+    },
+    "fields": [
+        "id",
+        "uid",
+        "name",
+        "slug",
+        "body",
+        "shortDescription",
+        {
+            "c_relatedArticles": [
+                "name",
+                "uid",
+                "shortDescription",
+                "landigPageUrl"
+            ]
+        },
+        {
+            "c_parentTopics": [
+                "name",
+                "uid",
+                {
+                    "c_parentTopics":[
+                        "name",
+                        "uid",
+                        { 
+                            "c_childrenTopics": [
+                                "name",
+                                "uid"
+                            ]
+                        },
+                        {
+                            "c_parentTopics": [
+                                "name",
+                                "uid",
+                                {
+                                    "c_relatedTopics": [
+                                        "name",
+                                        "uid",
+                                        {
+                                            "c_childrenTopics": [
+                                                "name",
+                                                "uid",
+                                                {
+                                                    "c_childrenTopics":[
+                                                        "name",
+                                                        "uid"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+
+                                    ]
+                                },
+                                {
+                                    "c_childrenTopics":[
+                                        "name",
+                                        "uid"
+                                    ]
+                                },
+                                {
+                                    "c_parentTopics": [
+                                        "name",
+                                        "uid"
+                                    ]
+                                }
+                            ]                            
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "c_relatedTopics": [
+                "name",
+                "uid",
+                {
+                    "c_childrenTopics":[
+                        "name",
+                        "uid"
+                    ]
+                }
+            ]
+        }
+    ]
+  }
