@@ -1,0 +1,82 @@
+{
+    "source": "knowledgeGraph",
+    "filter": {
+      "savedFilderIds": ["704861046"]
+    },
+    "fields": {
+      "id": {},
+      "uid": {},
+      "name": {},
+      "slug": {},
+      "body": {},
+      "shortDescription": {},
+      "c_relatedArticles": {
+        "fields": {
+            "name": {},
+            "uid": {},
+            "shortDescription": {},
+            "landingPageUrl": {}
+        }
+      },
+      "c_parentTopics": {
+        "fields": {
+          "c_parentTopics": {
+              "fields": {
+                  "name": {},
+                  "uid": {},
+                  "c_childrenTopics": {
+                      "fields": {
+                          "name": {},
+                          "uid": {}
+                      }
+                  },
+                  "c_parentTopics": {
+                      "name": {},
+                      "uid": {},
+                      "c_relatedTopics": {
+                          "fields": {
+                              "name": {},
+                              "uid": {},
+                              "c_childrenTopics": {
+                                  "fields": {
+                                      "name": {},
+                                      "uid": {},
+                                      "c_childrenTopics": {
+                                          "fields": {
+                                              "name": {},
+                                              "uid": {}
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "c_childrenTopics": {
+                          "fields": {
+                              "name": {},
+                              "uid": {}
+                          }
+                      },
+                      "c_parentTopics": {
+                        "fields": {
+                            "name": {},
+                            "uid": {}
+                        }
+                    }
+                  }
+              }
+          }
+        }
+      },
+      "c_relatedTopics": {
+          "fields": {
+              "name": {},
+              "uid": {},
+              "c_childrenTopics": {
+                  "name": {},
+                  "uid": {}
+              }
+          }
+      }
+    }
+  }
