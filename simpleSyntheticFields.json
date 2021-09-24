@@ -1,0 +1,35 @@
+{
+    "source":"knowledgeGraph",
+    "filter":{
+       "entityTypes":[
+          "healthcareProfessional"
+       ]
+    },
+    "fields":[
+       "id",
+       "name",
+       "description",
+       "c_subspecialties.name",
+       "rel_doctorHospital.name",
+       "$listingUrls.googlemybusiness",
+       "$reviewsAgg.googlemybusiness",
+       "$reviewsAgg.facebook",
+       "$reviews.firstparty"
+    ], 
+    "transform": {
+        "jsonpatch": [
+          {
+            "op": "move",
+            "path": "/eid",
+            "from": "/entity/uid"
+          }
+        ],
+        "expandOptionFields": [
+          "paymentOptions"
+        ],
+        "replaceOptionValuesWithDisplayNames": [
+          "availableColors"
+        ]
+      }
+  
+ }

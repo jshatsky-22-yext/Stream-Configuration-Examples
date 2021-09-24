@@ -1,0 +1,61 @@
+{
+    "source":"knowledgeGraph",
+    "filter":{
+       "entityTypes":[
+          "healthcareProfessional"
+       ]
+    },
+    "fields":[
+       "id",
+       "name",
+       "description",
+       "c_subspecialties.name",
+       "rel_doctorHospital.name",
+       {
+           "listings": {
+               "publishers": ["facebook", "google"],
+               "fields": [
+                   "url"
+               ]
+           }
+       },
+       {
+        "reviewsAgg": {
+            "publishers": ["facebook", "google"],
+            "fields": [
+                "averageRating",
+                "publisher",
+                "reviewCount"
+                ]
+            }
+       },
+       {
+           "reviews": {
+               "publishers": ["firstparty"],
+               "fields": [
+                    "reviewId",
+                    "authorName",
+                    "content",
+                    "reviewUrl"
+               ],
+               "count": 15
+           }
+       }
+    ], 
+    "transform": {
+        "jsonpatch": [
+          {
+            "op": "move",
+            "path": "/eid",
+            "from": "/entity/uid"
+          }
+        ],
+        "expandOptionFields": [
+          "paymentOptions"
+        ],
+        "replaceOptionValuesWithDisplayNames": [
+          "availableColors"
+        ]
+      }
+  
+ }

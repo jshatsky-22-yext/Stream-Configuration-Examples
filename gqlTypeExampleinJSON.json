@@ -24,7 +24,7 @@
         "role": "provider",
         "fields": {
           "location": {
-            "fields": ["name"]
+            "fields": ["name", "npi"]
           }
         }
       },
