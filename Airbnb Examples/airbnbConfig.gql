@@ -1,0 +1,54 @@
+knowledgeGraph(savedFilterId: "704861046") {
+    id
+    uid
+    name
+    slug
+    body
+    shortDescription
+    c_helpInstructions
+    c_helpTopic
+    c_relatedArticles {
+      name
+      uid
+      shortDescription
+      landingPageUrl
+    }
+    c_parentTopics {
+      ...nameAndUid
+      c_parentTopics {
+          ...nameAndUid
+          c_childrenTopics {
+              ...nameAndUid
+          }
+          c_parentTopics {
+              ...nameAndUid
+              c_relatedTopics {
+                  ...nameAndUid
+                  c_childrenTopics {
+                      ...nameAndUid
+                      c_childrenTopics {
+                          ...nameAndUid
+                      }
+                  }
+              }
+              c_childrenTopics {
+                  ...nameAndUid
+              }
+              c_parentTopics {
+                  ...nameAndUid
+              }
+          }
+      }
+      c_relatedTopics {
+          ...nameAndUid
+          c_childrenTopics {
+              ...nameAndUid
+          }
+      }
+    }
+}
+
+fragment nameAndUid on Topic {
+    name
+    uid
+}
