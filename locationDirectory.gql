@@ -1,0 +1,23 @@
+knowledgeGraph(entityType: "locations") {
+    uid
+    id
+    name
+    c_directoryParent {
+        ...directoryNodeFields
+        c_directoryParent {
+            ...directoryNodeFields
+            c_directoryParent {
+                ...directoryNodeFields
+                c_directoryParent {
+                    ...directoryNodeFields
+                }
+            }
+        }
+    }
+}
+
+fragment directoryNodeFields {
+    id
+    uid
+    slug
+}
